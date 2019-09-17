@@ -233,4 +233,9 @@ void GSPlay::SetNewPostionForBullet()
 {
 }
 
+BOOLEAN GSPlay::Check()
+{
+	return BOOLEAN();
+}
+
 

@@ -35,6 +35,7 @@ public:
 	
 	void SetNewPostionForBullet();
 
+	static BOOLEAN Check();
 
 private:
 
