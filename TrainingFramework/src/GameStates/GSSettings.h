@@ -3,6 +3,7 @@
 #include "GameButton.h"
 #include "soloud.h"
 #include "soloud_wav.h"
+#include "GSMenu.h"
 
 class Sprite2D;
 class Sprite3D;
@@ -37,6 +38,7 @@ private:
 	std::vector< std::shared_ptr<Sprite2D>> m_listObjects;
 	SoLoud::Soloud* soloud = new SoLoud::Soloud;
 	
+
 	
 };
 

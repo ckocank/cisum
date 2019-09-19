@@ -8,7 +8,7 @@
 #include "AnimationSprite.h"
 #include "Sprite3D.h"
 #include "Text.h"
-
+ 
 
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
@@ -39,7 +39,6 @@ void GSSettings::Init()
 	button->Set2DPosition(60 * scale, 60 * scale);
 	button->SetSize(118 * scale, 90 * scale);
 	button->SetOnClick([]() {
-		//GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Menu);
 		GameStateMachine::GetInstance()->PopState();
 		});
 	m_listButton.push_back(button);
@@ -54,6 +53,8 @@ void GSSettings::Init()
 		});
 	m_listButton.push_back(button);
 
+	
+	
 }
 
 void GSSettings::Exit()

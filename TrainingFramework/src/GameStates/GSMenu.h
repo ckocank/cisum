@@ -26,16 +26,17 @@ public:
 	//void load(const char* filename);
 	
 private:
-	std::shared_ptr<Sprite2D> m_BackGround, button1;
+	std::shared_ptr<Sprite2D> m_BackGround, button1, banner;
 	std::list<std::shared_ptr<GameButton>>	m_listButton;
 	std::shared_ptr<Text>  m_Text_gameName;
+	std::shared_ptr<GameButton> delbutton;
 	//std::shared_ptr<SoLoud::Soloud> soloud;
 	//std::shared_ptr<SoLoud::Wav> menusong;
 	//SoLoud::Soloud soloud;
 
 	static SoLoud::Soloud* soloud;
-	SoLoud::Wav menusong, touch;
-
+	static SoLoud::Wav* menusong, touch;
+	
 
 };
 

@@ -58,7 +58,7 @@ void GSScore::Init()
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("Cooper Std Black Italic");
-	m_score = std::make_shared< Text>(shader, font, score_, TEXT_COLOR::WHILE, 5.0);
+	m_score = std::make_shared< Text>(shader, font, score_, TEXT_COLOR::WHILE, 3.0);
 	m_score->Set2DPosition(Vector2(screenWidth / 2 -10, screenHeight /2));
 }
 

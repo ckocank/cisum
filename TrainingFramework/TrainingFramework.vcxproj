@@ -272,6 +272,7 @@
     <ClCompile Include="src\GameObject\Shaders.cpp" />
     <ClCompile Include="src\GameObject\Text.cpp" />
     <ClCompile Include="src\GameObject\Texture.cpp" />
+    <ClCompile Include="src\GameObject\Timeleft1.cpp" />
     <ClCompile Include="src\GameObject\timeline.cpp" />
     <ClCompile Include="src\GameObject\wave.cpp" />
     <ClCompile Include="src\GameStates\GameStatebase.cpp" />
@@ -300,6 +301,7 @@
     <ClInclude Include="src\GameObject\Shaders.h" />
     <ClInclude Include="src\GameObject\Text.h" />
     <ClInclude Include="src\GameObject\Texture.h" />
+    <ClInclude Include="src\GameObject\Timeleft1.h" />
     <ClInclude Include="src\GameObject\timeline.h" />
     <ClInclude Include="src\GameObject\wave.h" />
     <ClInclude Include="src\GameStates\GameStatebase.h" />
