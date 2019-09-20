@@ -159,16 +159,41 @@ void GSPlay::Init()
 	gamesong.load(m_songList[0].c_str());
 	soloud->play(gamesong);
 
-	sname = m_songList[0].c_str();
-	sname.replace(0, 14, "");
+	sname1 = m_songList[0].c_str();
+	sname1.replace(0, 14, "");
 	for (int i = 0; i < 4; i++)
-		sname.pop_back();
+		sname1.pop_back();
 
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("calibri");
-	m_score = std::make_shared< Text>(shader, font, sname, TEXT_COLOR::WHILE, 1.0);
-	m_score->Set2DPosition(Vector2(screenWidth / 2, 870 * scale));
+	std::shared_ptr<Text> m_name = std::make_shared< Text>(shader, font, sname1, TEXT_COLOR::WHILE, 1.0);
+	m_name->Set2DPosition(Vector2(screenWidth / 2- 70, 870 * scale));
+	song.push_back(m_name);
+
+	sname2 = m_songList[1].c_str();
+	sname2.replace(0, 14, "");
+	for (int i = 0; i < 4; i++)
+		sname2.pop_back();
+
+	//text game title
+	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
+	font = ResourceManagers::GetInstance()->GetFont("calibri");
+	m_name = std::make_shared< Text>(shader, font, sname2, TEXT_COLOR::WHILE, 1.0);
+	m_name->Set2DPosition(Vector2(screenWidth / 2 - 70, 670 * scale));
+	song.push_back(m_name);
+
+	sname3 = m_songList[2].c_str();
+	sname3.replace(0, 14, "");
+	for (int i = 0; i < 4; i++)
+		sname3.pop_back();
+
+	//text game title
+	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
+	font = ResourceManagers::GetInstance()->GetFont("calibri");
+	m_name = std::make_shared< Text>(shader, font, sname3, TEXT_COLOR::WHILE, 1.0);
+	m_name->Set2DPosition(Vector2(screenWidth / 2 - 70, 470 * scale));
+	song.push_back(m_name);
 }
 
 void GSPlay::Exit()
@@ -219,6 +244,10 @@ void GSPlay::Update(float deltaTime)
 	{
 		obj->Update(deltaTime);
 	}
+	for (auto obj : song)
+	{
+		obj->Update(deltaTime);
+	}
 	
 	m_time += deltaTime;
 	if (m_time <= 25.0f)
@@ -252,6 +281,7 @@ void GSPlay::Draw()
 	m_BackGround->Draw();
 	m_TimeleftBG->Draw();
 	
+	
 	for (auto obj : m_timeline)
 	{
 		obj->Draw();
@@ -264,7 +294,10 @@ void GSPlay::Draw()
 	{
 		it->Draw();
 	}
-	m_score->Draw();
+	for (auto obj : song)
+	{
+		obj->Draw();
+	}
 	gameover->Draw();
 	backButton->Draw();
 

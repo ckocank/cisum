@@ -45,7 +45,7 @@ void GSScore::Init()
 	
 	//load score
 	std::string score_;
-	std::ifstream file_("khongphaiscore.txt");
+	std::ifstream file_("../Data/khongphaiscore.txt");
 	if (file_.is_open())
 	{
 		while (getline(file_, score_))

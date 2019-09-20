@@ -50,15 +50,16 @@ public:
 private:
 
 	std::shared_ptr<Sprite2D> m_BackGround, m_Timeleft1, m_Timeleft2, m_TimeleftBG, m_Select, m_Right, gameover;
-	std::shared_ptr<Text>  m_score;
+	std::list < std::shared_ptr<Text>>  m_name,song;
 	std::list<std::shared_ptr<GameButton>>	m_listButton;
 	std::vector<std::shared_ptr<AnimationSprite>> m_listObjects;
 	std::vector<std::shared_ptr<Sprite2D>> m_timeline;
-	std::vector<std::string> m_songList, m_song;
+	std::vector<std::string> m_songList;
+	//std::list<std::Text> m_song;
 	std::shared_ptr<GameButton > backButton;
 	SoLoud::Soloud* soloud = new SoLoud::Soloud;
 	SoLoud::Wav gamesong;
-	std::string line_, sname;
+	std::string line_, sname1, sname2, sname3;
  
 	float m_time; 
 	int x_select, y_select, x_correct, y_correct;
